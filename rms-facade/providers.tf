@@ -25,4 +25,5 @@ provider "oci" {
 
 provider "github" {
   token = var.github_token != null ? var.github_token : (var.url_dependency_source_github_token != null ? var.url_dependency_source_github_token : null)
+  owner = var.github_configuration_owner
 }
