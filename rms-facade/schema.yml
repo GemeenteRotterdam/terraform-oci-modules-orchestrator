@@ -26,6 +26,7 @@ variableGroups:
       - oci_dependency_objects
       - github_token
       - github_configuration_repo
+      - github_configuration_owner
       - github_configuration_branch
       - github_configuration_files
       - github_dependency_files
@@ -123,6 +124,15 @@ variables:
     type: string
     title: "GitHub Repository"
     description : "The GitHub repository with Landing Zone configurations. A GitHub token with read permissions is required."
+    visible: 
+      eq:
+        - configuration_source
+        - "github"
+
+  github_configuration_owner:
+    type: string
+    title: "GitHub Repository Owner/organization"
+    description : "The GitHub repository with Landing Zone configurations owner. An GitHub owner name."
     visible: 
       eq:
         - configuration_source

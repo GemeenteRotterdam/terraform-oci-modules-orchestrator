@@ -83,6 +83,11 @@ variable "github_configuration_repo" {
   type = string
   default = null
 }
+
+variable "github_configuration_owner" {
+  type = string
+  default = null
+}
 variable "github_configuration_branch" {
   type = string
   default = null
