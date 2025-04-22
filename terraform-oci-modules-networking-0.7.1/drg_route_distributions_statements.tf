@@ -130,6 +130,13 @@ resource "oci_core_drg_route_distribution_statement" "these" {
       drg_attachment_id = each.value.match_criteria.drg_attachment_id
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+        match_criteria["attachment_type"]
+      ]
+  }
+
 }
 
 
