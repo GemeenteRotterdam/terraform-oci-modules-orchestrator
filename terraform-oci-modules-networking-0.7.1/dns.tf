@@ -292,6 +292,9 @@ resource "oci_dns_resolver" "these" {
       qname_cover_conditions    = rule.value.qname_cover_conditions != null ? rule.value.qname_cover_conditions : []
 
     }
+  lifecycle {
+    ignore_changes = [ resolver_id ]
+  }
   }
 
   depends_on = [data.oci_core_vcn_dns_resolver_association.dns_resolvers]
