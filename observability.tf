@@ -52,7 +52,7 @@ module "oci_lz_alarms" {
 
 module "oci_lz_logging" {
   count  = var.logging_configuration != null ? 1 : 0
-  source = "git::https://github.com/oci-landing-zones/terraform-oci-modules-observability.git//logging?ref=v0.2.3"
+  source = "git::https://github.com/oci-landing-zones/terraform-oci-modules-observability.git//logging?ref=v0.2.1"
   tenancy_ocid            = var.tenancy_ocid
   logging_configuration   = var.logging_configuration
   compartments_dependency = local.compartments_dependency
